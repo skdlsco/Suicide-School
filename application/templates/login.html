@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  </head>
+  <body>
+  <form name = "form">
+    id : <input type = "text" name = "id"><br>
+    password : <input type = "text" name = "password"><br>
+    <button type = "button" onclick = "onClick()">submit</button>
+  </form>
+  <script>
+    function onClick(){
+      var data = $("form[name = form]").serialize()
+
+      $.ajax({
+        type:"POST",
+        data : data,
+        url :"/auth/login",
+        success : function(result){
+          console.log(result)
+        }
+      })
+    }
+    </script>
+  </body>
+ </html>
