@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  </head>
-  <body>
-  <form name = "form">
-    id : <input type = "text" name = "id"><br>
-    password : <input type = "text" name = "password"><br>
-    <button type = "button" onclick = "onClick()">submit</button>
-  </form>
-  <script>
-    function onClick(){
-      var data = $("form[name = form]").serialize()
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Suicide School</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <a href="main.html"><img src="{{ url_for('static', filename='img/logo.png') }}"></a> <br><br><br>
 
-      $.ajax({
-        type:"POST",
-        data : data,
-        url :"/auth/login",
-        success : function(result){
-          console.log(result)
-        }
-      })
-    }
-    </script>
-  </body>
- </html>
+    <input type="text" placeholder="ID" class="txt" id="id"> <br>
+    <input type="text" placeholder="PASSWORD" class="txt" id="password"> <br>
+    <input type="button" value="Login" id="btn" onclick="onClick()"> <br>
+
+    <a href="signup.html" id="su">Sign Up</a>
+     <script>
+       function onClick() {
+         $.ajax({
+           type:"POST",
+           url:"/auth/login",
+           data:{
+             "id" : $("#id").val(),
+             "password" : $("#password").val()
+           },
+           success:function(data) {
+             console.log(data);
+           },
+           error:function(err) {
+             console.log(err);
+           }
+         })
+       }
+     </script>
+</body>
+</html>

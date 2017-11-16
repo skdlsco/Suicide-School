@@ -1,0 +1,43 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+
+    text-align: center;
+    margin-top: 180px;
+    font-size: 12px;
+}
+
+img {
+    width: 100px;
+}
+
+input {
+    height: 30px;
+    margin: 3px;
+
+    border-radius: 7px;
+    border: 1px solid lightgray;
+}
+
+.txt {
+    width: 300px;
+    padding-left: 7px;
+}
+
+#btn {
+    width: 310px;
+    height: 33px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    background-color: #4c4c4c;
+    border: 0;
+    color: white;
+    font-size: 17px;
+}
+
+#su {
+    margin-left: 250px;
+    text-decoration: none;
+    color: lightgray;
+}

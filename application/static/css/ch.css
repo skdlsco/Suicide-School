@@ -1,0 +1,36 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+
+    text-align: center;
+}
+
+#logo {
+    width: 100px;
+    margin-top: 10px;
+}
+
+#banner {
+    height: 400px;
+}
+
+p {
+    font-size: 30px;
+}
+
+#pre {
+    position: fixed;
+    left: 25px;
+}
+
+#next {
+    position: fixed;
+    right: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+    margin-top: 10px;
+}

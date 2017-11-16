@@ -1,17 +1,20 @@
-from flask import Response, Blueprint, request, session, render_template, redirect
+from flask import Response, Blueprint, request, session, render_template, redirect, make_response, url_for
 from bson import json_util
 from application.db import users
+import datetime
 import uuid
 auth = Blueprint('/auth', __name__)
 
 @auth.route('/login', methods=['POST', 'GET'])
 def login():
-    if 'token' in session:
-        if users.find_one({'token' : session['token']}):
-         return redirect('/auth/test')
-
     if request.method == 'GET':
+        if 'token' in  request.cookies:
+            token = request.cookies.get('token')
+            user = users.find_one({'token' : token})
+            if user:
+                return redirect('/chapter')
         return render_template('login.html')
+
     id = request.form['id']
     password = request.form['password']
     user = users.find_one({'id' : id})
@@ -21,29 +24,36 @@ def login():
     if user['password'] != password:
         return failed()
 
-    session['token'] = user['token']
-    return Response(response=json_util.dumps({'status' : True, 'data' : user}), status = 200, mimetype = 'application/json')
+    res = Response(response=json_util.dumps({'status' : True, 'data' : user}), status = 200, mimetype = 'application/json')
+    resp = make_response(res)
+    if 'remember' in request.form:
+        date_expire =  datetime.datetime.now()
+        date_expire = date_expire + datetime.timedelta(days=31)
+        resp.set_cookie('token', user['token'], expires=date_expire)
+    else:
+        resp.set_cookie('token', user['token'])
+    return resp
 
-@auth.route('/register', methods=['POST', 'GET'])
+@auth.route('/signup', methods=['POST', 'GET'])
 def register():
     if request.method == 'GET':
-        return render_template('register.html')
+        return render_template('signup.html')
 
-    username = request.form['name']
     password = request.form['password']
     id = request.form['id']
     token = str(uuid.uuid4()).replace('-','')
-
-    if users.find_one({'name' : username}) or users.find_one({'id' : id}):
+    chapter  =  0
+    timer = 0
+    if users.find_one({'id' : id}):
         return failed()
 
-    user = json_util.dumps({'name' : username, 'password' : password, 'id' : id, 'token' : token})
+    user = json_util.dumps({'password' : password, 'id' : id, 'token' : token, 'chapter' : chapter, 'timer' : timer})
     users.insert(json_util.loads(user))
-    return Response(response=json_util.dumps({'status' : True, 'data' : json_util.loads(user)}), status = 200, mimetype = 'application/json')
+    return Response(response=json_util.dumps({'status' : True}), status = 200, mimetype = 'application/json')
 
 @auth.route('/getData', methods=['GET'])
 def getData():
-    token = request.args['token']
+    token = request.cookies.get('token')
     user = users.find_one({'token' : token})
 
     if not user:
@@ -51,10 +61,3 @@ def getData():
     return Response(response=json_util.dumps({'status' : True, 'data' : user}), status = 200, mimetype = 'application/json' )
 def failed():
     return Response(response=json_util.dumps({'status' : False}), status = 404, mimetype ='application/json')
-
-@auth.route('/test', methods=['GET', 'POST'])
-def test():
-    token = session['token']
-    user = users.find_one({'token' : token})
-
-    return Response(response = json_util.dumps({'status' : True, 'data' : user}), status = 200, mimetype = 'application/json')
