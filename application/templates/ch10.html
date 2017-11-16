@@ -2,20 +2,37 @@
 <html lang="en">
 <head>
     <title>Suicide School</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter10.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(10)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter10.jpg') }}" id="banner"> <br>
 
-    <a href="ch9.html" id="pre">< 이전</a>
-    <a href="chx.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=9" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=x" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        이 방법의 첫번째 단계는 설산으로 발을 옮기는 것이다 <br>
+        물론 방안에서도 가능하긴 하나 매우 힘든 일이다 <br>
+        설산의 환경을 체험해보기 위해서 에베레스트 산 정복이나 <br>
+        겨울철 눈 많이 내리는 산에 가는 것도 나쁘지 않다 <br>
+        눈보라도 친다면 더더욱 좋다 <br><br><br>
+        </p>
+
+    <p id="after">
+        <br>
+        이 방법은 움직여야 해서 번거로울 수 있지만 <br>
+        시체에 상처하나 남기지 않고 그저 황홀한 죽음을 경험할 수 있다 <br>
+        설산 아무도 없는 곳에서 2~3일간 웅크려 있으면 <br>
+        고통스러움 없이 깊은 잠에 들게 될 것이다 <br><br><br>
+    </p>
 </body>
 </html>

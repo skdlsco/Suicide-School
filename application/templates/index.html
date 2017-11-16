@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
     <title>Suicide School</title>
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.js"
-            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
+    <img src="{{url_for('static', filename = 'img/banner1.jpg')}}" alt="" class="bg" id="bg1">
+    <img src="{{url_for('static', filename = 'img/banner2.jpg')}}" alt="" class="bg" id="bg2">
+    <img src="{{url_for('static', filename = 'img/banner3.jpg')}}" alt="" class="bg" id="bg3">
+
+    <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="" class="logo"><br>
+
+    <div class="lg">
+        <a href="http://soylatte.kr:4102/chapter?ch=0"><input type="button" value="Start"></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
 </body>
 </html>

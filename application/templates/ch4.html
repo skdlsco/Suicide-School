@@ -3,19 +3,37 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+    
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}"id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter4.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(4)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter4.jpg') }}" id="banner"> <br>
 
-    <a href="ch3.html" id="pre">< 이전</a>
-    <a href="ch5.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=3" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=5" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        충동적으로 하기에는 제일 좋은 방법 <br>
+        하지만 그 떨어질 용기조차 없으면 할 수 없다 <br>
+        높은 곳에서 떨어지는 용기를 얻기 위해 <br>
+        아파트 옥상, 전망대에 올라가서 높은 곳에 대한 두려움을 없애고 <br>
+        번지점프, 놀이기구 등을 경험해보고 떨어지는 것을 간접체험해보자 <br><br><br>
+    </p>
+
+    <p id="after">
+        <br>
+        투신에 관한 여러 기사를 보면 투신에 실패한 사람이 꽤 많다 <br>
+        이때 투신할 때에는 낙하 높이가 중요하다 <br>
+        하지만 50m, 370m에서 떨어져서 산 사례도 존재한다 <br>
+        낙하지점은 눈밭, 물이 아닌 단단한 콘크리트인 편이 좋다 <br><br><br>
+    </p>
 </body>
 </html>

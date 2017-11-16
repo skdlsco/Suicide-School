@@ -3,19 +3,37 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+    
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter9.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(9)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter9.jpg') }}" id="banner"> <br>
 
-    <a href="ch8.html" id="pre">< 이전</a>
-    <a href="ch10.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=8" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=10" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        분신이 마음에 와닿지 않는다면 지금 당장 라이터를 들고 종이를 태워보자 <br>
+        이 방법은 모든 자살 방법 중에서 가장 고통스럽다 <br>
+        평범하게 죽기를 원한다면 이 방법을 추천하지 않는다 <br><br><br>
+    </p>
+
+    <p id="after">
+        <br>
+        피부에 100% 화상을 입어도 죽지 않고 <br>
+        병원에 이송된다면 고통에 몸부림친 채 죽게 된다 <br>
+        이 방법은 죽지 않았을 때의 리스크가 제일 크다 <br> <br>
+
+        그러나 무엇을 이루기 위한 시위를 할 때에는 <br>
+        이만큼 영향력이 큰 방법은 없을 것이다 <br><br><br>
+    </p>
 </body>
 </html>

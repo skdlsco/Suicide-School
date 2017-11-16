@@ -3,19 +3,40 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+    
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter6.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(6)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter6.jpg') }}" id="banner"> <br>
 
-    <a href="ch5.html" id="pre">< 이전</a>
-    <a href="ch7.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=5" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=7" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        예전이면 몰라도 지금의 이 방법은 <br>
+        번거롭고 고통스러우며 제대로 죽기도 힘들다 <br>
+        꼭 경험해보고 싶다면 화재, 가스대피 훈련을 참여해보자 <br><br><br>
+    </p>
+
+    <p id="after">
+        <br>
+        현재 도시가시는 예전과 달리 중독성있는 일산화탄소가 없다 <br>
+        그렇기 때문에 평안하고, 고통없는 죽음은 이제 없다 <br><br>
+
+        일산화탄소가 가득한 가솔린 가스를 차안에 넣고, <br>
+        모든 구멍을 막은 후 편안히 자면 영원한 수면은 가능하다 <br>
+        하지만 시간이 오래걸리고 매우 번거롭다 <br><br>
+
+        이 방법 보다는 차라리 비닐봉지를 머리에 씌운 후, <br>
+        질식사 하는 것이 더 나을 것이다 <br><br><br>
+    </p>
 </body>
 </html>

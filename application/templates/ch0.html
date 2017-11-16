@@ -3,6 +3,7 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -10,11 +11,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <a href="main.html"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
     <img src="{{ url_for('static', filename='img/chapter0.jpg') }}" id="banner"> <br>
 
-    <a href="ch1.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=1" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p>
+        <br>
+        자살에는 여러가지 방법이 있다. <br>
+        이곳에서는 당신이 자살을 할 수 있도록 <br>
+        용기를 키워주기 위해 많은 방법을 체험시켜 준다. <br> <br>
+        각기 다른 장점과 리스크를 생각하며 <br>
+        자신에게 맞는 자살 방법을 찾아내기를 바란다. <br> <br>
+
+        다음 챕터로 넘어가는 데에는 1일이라는 시간이 필요하다 <br><br><br>
+    </p>
 </body>
 </html>

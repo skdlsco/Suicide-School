@@ -1,0 +1,42 @@
+
+
+body {
+    overflow-y:hidden; overflow-x: hidden;
+    font-family: 'NanumSquare', sans-serif; 
+    margin: 0;
+}
+
+.bg{
+    display: none;
+    width: 100%;
+    position: absolute;
+}
+
+.logo{
+    margin-top: 10%;
+    margin-left: 40%;
+    position: relative;
+    width: 20%;
+}
+
+.lg{
+    
+    text-align: center;
+}
+
+
+input{
+    color: #fff;
+    position: relative;
+    border: 0px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 7px;
+    width: 150px;
+    height: 35px;
+    margin-top: 2%; 
+    font-size: 18px;
+}
+
+.login{
+    position: absolute;
+}

@@ -3,6 +3,8 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+  
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -10,11 +12,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <a href="main.html"><img src="img/logo.png" id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapterx.jpg') }}"  id="banner"> <br>
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapterx.jpg') }}" id="banner"> <br>
 
-    <a href="ch10.html" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=10" id="pre">< 이전</a>
 
-    <p>머시기머시기</p>
+    <p>
+        <br>
+        자살 방법은 이것보다 더 많다 <br>
+        상상할 수 없을 정도다 <br> <br>
+
+        많은 사람들은 자살시도를 하며 자살에 성공해서 죽거나 <br>
+        실패해서 큰 후유증을 남긴 채 인생을 불우하게 사는 사람도 있다 <br> <br>
+
+        자살을 하고 싶다면 자살을 <br>
+        인생을 살고 싶다면 인생을 <br><br>
+
+        둘 중 하나를 고르면 된다 <br><br>
+
+        지금까지 여기서 자살을 위해 했던 행동들 <br>
+        그것들은 자살에 못 미치는 행동들이다 <br> <br>
+
+        하지만 그런 사소한 행동들을 하면서 <br>
+        삶의 즐거움을 느끼거나 인생을 조금이라도 살고 싶다고 생각했다면 <br> <br>
+
+        어설픈 자살보다는 어설픈 인생을 사는 게 <br>
+        조금 더 좋은 선택이 아닐까 생각한다 <br> <br>
+
+        그런데도 자살을 하고 싶다면, <br>
+        어쩔 수 없이 말리진 않겠다 <br><br><br>
+    </p>
 </body>
 </html>

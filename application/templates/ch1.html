@@ -3,19 +3,37 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+    
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter1.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(1)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter1.jpg') }}" id="banner"> <br>
 
-    <a href="ch0.html" id="pre">< 이전</a>
-    <a href="ch2.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=0" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=2" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        자살보다는 자해로 많이 사용되는 방법이다. <br>
+        손목긋기는 지속적인 고통이다. <br>
+        주변에서 빳빳한 종이를 찾고 그 종이로 손가락을 그어보자 <br><br>
+
+        커터칼을 손목에 대거나 목에 위치한 경동맥에 대보자 <br>
+        자살을 시도한다는 생각으로 기분을 미리 느껴볼 수 있다 <br><br><br>
+    </p>
+
+    <p id="after">
+        <br>
+        손목긋기는 다른 수단에 비하면 좋은 자살수단이 아니다 <br>
+        다른 수단과 달리 고통을 느끼고 죽어가는 자신의 모습을 본다 <br>
+        그리고 손목을 그어서 죽는 경우는 5%밖에 되지 않는다 <br><br><br>
+    </p>
 </body>
 </html>

@@ -32,7 +32,7 @@ def login():
         resp.set_cookie('token', user['token'], expires=date_expire)
     else:
         resp.set_cookie('token', user['token'])
-    return resp
+    return res
 
 @auth.route('/signup', methods=['POST', 'GET'])
 def register():
@@ -42,7 +42,7 @@ def register():
     password = request.form['password']
     id = request.form['id']
     token = str(uuid.uuid4()).replace('-','')
-    chapter  =  0
+    chapter  =  1
     timer = 0
     if users.find_one({'id' : id}):
         return failed()
@@ -60,4 +60,4 @@ def getData():
         return failed()
     return Response(response=json_util.dumps({'status' : True, 'data' : user}), status = 200, mimetype = 'application/json' )
 def failed():
-    return Response(response=json_util.dumps({'status' : False}), status = 404, mimetype ='application/json')
+    return Response(response=json_util.dumps({'status' : False}), status = 200, mimetype ='application/json')

@@ -3,19 +3,37 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+    
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter5.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(5)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter5.jpg') }}" id="banner"> <br>
 
-    <a href="ch4.html" id="pre">< 이전</a>
-    <a href="ch6.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=4" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=6" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        달리는 차에 달려가기는 힘든 일이다 <br>
+        간단하게 체험해보자면 침대나 소파에 몸을 던져보자 <br>
+        그것이 익숙해졌다면 야구장에서 날라오는 공을 보자 <br>
+        시속이 빠른 공을 보고 있으면 차와 기차에 달려드는 것에 대한 <br>
+        두려움도 점차 감소될 것이다 <br><br><br>
+    </p>
+
+    <p id="after">
+        <br>
+        자동차는 지하철/기차에 비해 자살확률이 그다지 높지 않다 <br>
+        참고로, 스크린도어등의 방지장치가 있는 지하철 역사들은 피하자 <br>
+        또, 일반 열차의 경우 역사에 들어오며 속도를 줄이기 때문에 <br>
+        당역을 통과하는 급행열차를 노리면 확률은 더 높을 것이다 <br><br><br>
+    </p>
 </body>
 </html>

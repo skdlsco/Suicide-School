@@ -3,19 +3,36 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+    
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}"id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter8.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(8)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter8.jpg') }}" id="banner"> <br>
 
-    <a href="ch7.html" id="pre">< 이전</a>
-    <a href="ch9.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=7" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=9" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        익사는 근본적으로 질식사다 <br>
+        지금 당장 숨을 참아보자 <br>
+        버티지 못해 바로 숨을 쉬게 될 것이다 <br>
+        워터파크의 파도풀에 깊숙히 들어가 파도에 쓸려보자 <br>
+        실제의 기분을 느낄 수 있을 것이다 <br><br><br>
+    </p>
+
+    <p id="after">
+        <br>
+        아무리 익사를 하고 싶어 바다, 강에 입수를 해도 <br>
+        결국엔 숨을 끝내 참지 못해 다시 물 위로 떠 오를 것이다 <br>
+        따라서 이 것도 그렇게 추천하는 방법은 아니다 <br><br><br>
+    </p>
 </body>
 </html>

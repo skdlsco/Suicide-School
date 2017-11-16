@@ -3,19 +3,36 @@
 <head>
     <title>Suicide School</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ch.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'img/favicon-16.png')}}">
+    
     <script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/chapter.js')}}"></script>
 </head>
-<body>
-    <a href="main.html"><img href="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
-    <img src="{{ url_for('static', filename='img/chapter7.jpg') }}"  id="banner"> <br>
+<body onload="onLoad(7)">
+    <a href="http://soylatte.kr:4102/main"><img src="{{ url_for('static', filename='img/logo.png') }}" id="logo"></a> <br> <br>
+    <img src="{{ url_for('static', filename='img/chapter7.jpg') }}" id="banner"> <br>
 
-    <a href="ch6.html" id="pre">< 이전</a>
-    <a href="ch8.html" id="next">다음 ></a>
+    <a href="http://soylatte.kr:4102/chapter?ch=6" id="pre">< 이전</a>
+    <a href="http://soylatte.kr:4102/chapter?ch=8" id="next">다음 ></a>
 
-    <p>머시기머시기</p>
+    <p id="before">
+        <br>
+        흔히들 드라마나 영화에서 수면제나 약물을 과다복용해 자살하는 것을 봤을것이다. <br>
+        약을 과다복용한다는 것은 상당히 쉽지 않은 일이기에 <br>
+        약을 한번에 많이 먹을 수 있도록 연습하는 것이 중요하다 <br>
+        이 것에 익숙해지기 위해 하루에 비타민이나 항우울제를 2알씩을 먹어보자 <br><br><br>
+    </p>
+
+    <p id="after">
+        <br>
+        대부분의 수면제의 경우에는 사망까지의 치사율로 끌어올리려면 100정 이상의 수면제가 필요하다고 한다 <br>
+        하지만 한번에 4, 5알을 같이 복용하면 약과 물이 차버려 토하게 된다 <br>
+        또한, 수면제는 의사의 처방 없이는 약국에서 구매할 수 없고 <br>
+        구매한다고 해도 죽을 확률이 낮기 때문에 이 방법을 추천하지는 않는다 <br><br><br>
+    </p>
 </body>
 </html>
