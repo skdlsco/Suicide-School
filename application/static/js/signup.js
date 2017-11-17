@@ -10,8 +10,12 @@ function onClick() {
     url:"/auth/signup",
     data: {'id' : $("#id").val(), 'password' : $("#password").val()},
     success: function(data) {
+        console.log(data)
+        console.log(data.status)
       if (data.status == true){
         location.replace("http://soylatte.kr:4102/auth/login")
+      }else{
+        alert("회원가입실패")
       }
     },
     error: function(data) {

@@ -43,8 +43,8 @@ def register():
     password = request.form['password']
     id = request.form['id']
     token = str(uuid.uuid4()).replace('-','')
-    chapter  =  1
-    timer = time.mktime((datetime.datetime.now() + datetime.timedelta(seconds=10)).timetuple())
+    chapter  =  0.5
+    timer = time.mktime((datetime.datetime.now() + datetime.timedelta(seconds=15)).timetuple())
     if users.find_one({'id' : id}):
         return failed()
 

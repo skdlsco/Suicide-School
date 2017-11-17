@@ -4,6 +4,7 @@ function onClick() {
     url:"/auth/login",
     data: {'id' : $("#id").val(), 'password' : $("#password").val()},
     success: function(data) {
+        console.log(data.status)
       if (data.status == true){
         location.replace("http://soylatte.kr:4102/chapter")
       }else{

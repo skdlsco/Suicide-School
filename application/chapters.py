@@ -19,10 +19,11 @@ def chapters():
                 return  redirect('/auth/login')
             uChapter =  user['chapter']
 
+            if int(uChapter) == 0:
+                return  render_template("ch0.html")
             return redirect("/chapter?"+"ch="+str(int(float(uChapter))))
 
         return render_template("ch0.html")
-
     if 'token' not in request.cookies:
         return redirect('/auth/login')
     token = request.cookies.get('token')
