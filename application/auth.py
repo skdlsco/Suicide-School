@@ -2,6 +2,7 @@ from flask import Response, Blueprint, request, session, render_template, redire
 from bson import json_util
 from application.db import users
 import datetime
+import time
 import uuid
 auth = Blueprint('/auth', __name__)
 
@@ -43,7 +44,7 @@ def register():
     id = request.form['id']
     token = str(uuid.uuid4()).replace('-','')
     chapter  =  1
-    timer = 0
+    timer = time.mktime((datetime.datetime.now() + datetime.timedelta(seconds=10)).timetuple())
     if users.find_one({'id' : id}):
         return failed()
 
